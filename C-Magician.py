@@ -48,21 +48,6 @@ def delete_prefetch_files():
 def clear_recycle_bin():
     os.system('PowerShell.exe -Command Clear-RecycleBin -Force')
 
-def delete_all_files():
-    folder = 'C:\\Windows\\Prefetch'
-    for folder in ['C:\\Windows\\Temp', 'C:\\Windows\\Prefetch']:
-        for filename in os.listdir(folder):
-            file_path = os.path.join(folder, filename)
-            try:
-                if os.path.isfile(file_path) or os.path.islink(file_path):
-                    os.unlink(file_path)
-                elif os.path.isdir(file_path):
-                    shutil.rmtree(file_path)
-            except Exception as e:
-                 pass
-
-    os.system('PowerShell.exe -Command Clear-RecycleBin -Force')
-
 print('請選擇要執行哪些功能：')
 print('1. 刪除Temp中的檔案')
 print('2. 刪除Prefetch中的檔案')
@@ -78,6 +63,8 @@ elif choice == '2':
 elif choice == '3':
     clear_recycle_bin()
 elif choice == '4':
-    delete_all_files()    
+    delete_temp_files(),delete_prefetch_files(),clear_recycle_bin()
 else:
     print('無效的選擇。')
+    input('按任意鍵繼續...')
+    os.system('cls' if os.name == 'nt' else 'clear')
