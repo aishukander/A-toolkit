@@ -16,8 +16,8 @@ with open(filename, "r", encoding="utf-8") as f:
     text = f.read()
 
 #詢問使用者要替換與被替換的單字，並將其儲存為old變數與new變數
-old = input("請輸入您要替換的單字：")
-new = input("請輸入您要替換成什麼單字：")
+old = input("請輸入要替換的單字：")
+new = input("請輸入要替換成的單字：")
 
 #替換文本中的單字，並將修改後的文本儲存為new_text變數
 new_text = re.sub(old, new, text)
