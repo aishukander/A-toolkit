@@ -24,9 +24,9 @@ def check_and_install(module):
         module = import_module(module)
     #返回模組物件
     return module
-    
-    #檢查和安裝pyperclip模組，並將其儲存為pyperclip變數
-    pyperclip = check_and_install("pyperclip")
+
+#檢查和安裝pyperclip模組，並將其儲存為pyperclip變數
+pyperclip = check_and_install("pyperclip")
 
 #文本型
 def text():
