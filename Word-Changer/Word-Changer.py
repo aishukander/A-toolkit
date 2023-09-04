@@ -24,12 +24,12 @@ def check_and_install(module):
         module = import_module(module)
     #返回模組物件
     return module
-
-#文本型
-def text():
+    
     #檢查和安裝pyperclip模組，並將其儲存為pyperclip變數
     pyperclip = check_and_install("pyperclip")
 
+#文本型
+def text():
     #詢問使用者要修改的文本，並將其儲存為text變數
     text = input("請輸入要修改的文本：")
 
