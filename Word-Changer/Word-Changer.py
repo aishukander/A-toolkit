@@ -28,7 +28,8 @@ else: #如果是Linux或macOS系統
           print(f"正在嘗試安裝所需的模組")
           os.system(f"sudo apt install python3-tk")
           os.system(f"sudo apt install python3-pyperclip")
-#導入模組
+
+#導入格外模組
 import tkinter
 import pyperclip
 #導入filedialog函數
