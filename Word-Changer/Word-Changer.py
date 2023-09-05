@@ -1,7 +1,6 @@
 #導入模組
 import re
 import os
-import tkinter
 from importlib import import_module
 #導入filedialog函數
 from tkinter.filedialog import askopenfilename
@@ -15,13 +14,18 @@ def check_and_install(module):
     except ImportError:
         #輸出提示訊息
         print(f"正在嘗試安裝所需的模組：{module}\\n")
-        os.system(f"pip install {module}")
+        #根據不同的作業系統，使用不同的pip命令
+        if os.name == "nt": #如果是Windows系統
+            os.system(f"python -m pip install {module}")
+        else: #如果是Linux或macOS系統
+            os.system(f"sudo apt install python3- {module}")
         #再次嘗試導入模組
         module = import_module(module)
     #返回模組物件
     return module
 
 #檢查和安裝pyperclip模組，並將其儲存為pyperclip變數
+tkinter = check_and_install("tkinter")
 pyperclip = check_and_install("pyperclip")
 
 #文本型
