@@ -3,13 +3,13 @@ import re
 import os
 from importlib import import_module
 
+#檢測模組是否有安裝
 try:
     import pyperclip
     pyperclip = ("yes")
 except ImportError:
     print("pyperclip模組未安裝")
     pyperclip = ("no")
-
 try:
     import tkinter
     tkinter = ("yes")
@@ -17,7 +17,7 @@ except ImportError:
     print("tkinter模組未安裝")
     tkinter = ("no")
 
-#根據不同的作業系統，使用不同的pip命令
+#根據不同的作業系統，使用不同的命令
 if os.name == "nt": #如果是Windows系統
     if pyperclip == ("no"):
        print(f"正在嘗試安裝所需的模組")
