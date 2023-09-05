@@ -2,8 +2,6 @@
 import re
 import os
 from importlib import import_module
-#導入filedialog函數
-from tkinter.filedialog import askopenfilename
 
 #定義一個函數，用於檢查和安裝模組
 def check_and_install(module):
@@ -27,6 +25,9 @@ def check_and_install(module):
 #檢查和安裝pyperclip模組，並將其儲存為pyperclip變數
 tkinter = check_and_install("tkinter")
 pyperclip = check_and_install("pyperclip")
+
+#導入filedialog函數
+from tkinter.filedialog import askopenfilename
 
 #文本型
 def text():
