@@ -1,4 +1,3 @@
-#導入模組
 import os
 import shutil
 import ctypes
